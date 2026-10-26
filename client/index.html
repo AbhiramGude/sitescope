@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="SiteScope — Architecture Accessibility Intelligence. Evaluate building sites with walking catchments, amenity analysis, and AI-powered typology recommendations." />
+    <meta name="theme-color" content="#16B8AD" />
+    <title>SiteScope — Architecture Accessibility Intelligence</title>
+    <!-- Prevent FOUC: apply theme before render -->
+    <script>
+      (function() {
+        var stored = localStorage.getItem('sitescope-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored === 'light' || stored === 'dark' ? stored : (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+        // Keep hidden until React renders
+        document.documentElement.style.visibility = 'hidden';
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
